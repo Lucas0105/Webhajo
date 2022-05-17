@@ -1,0 +1,59 @@
+html{
+	margin: 0;
+}
+
+nav{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2%;
+}
+
+nav #menue{
+	border: 3px solid yellow;
+	padding: 7px;
+}
+
+nav #menue a:first-child{
+	margin-left: 0;
+}
+
+nav #menue a{
+	font-size: 1.5em;
+	text-decoration: none;
+	margin-left: 30px;
+}
+
+nav #login a:first-child{
+	margin-left: 50px;
+}
+
+nav #login a{
+	font-size:1.2em;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+nav img{
+	margin-right: 50px;
+	
+}
+
+#introduction div:first-child{
+	width: 100%;
+	background-color: aqua;
+	height: 150px;
+	position: relative;
+}
+
+#introduction .circle-profile{
+	border-radius: 10%;
+	width: 100px;
+	height: 100px;
+}
+
+footer{
+	width: 100%;
+	background-color: gray;
+	height: 150px;
+}

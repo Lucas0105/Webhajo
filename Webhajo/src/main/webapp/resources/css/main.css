@@ -39,21 +39,17 @@ nav img{
 	
 }
 
-#introduction div:first-child{
-	width: 100%;
-	background-color: aqua;
-	height: 150px;
-	position: relative;
-}
-
-#introduction .circle-profile{
-	border-radius: 10%;
-	width: 100px;
-	height: 100px;
-}
-
 footer{
+	
+	display : flex;
 	width: 100%;
-	background-color: gray;
+	background-color: rgb(236, 239, 243);
 	height: 150px;
+	justify-content: center;
+	
+}
+
+footer p{
+	margin-top: 2%;
+	line-height:25px;
 }

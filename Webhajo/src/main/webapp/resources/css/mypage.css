@@ -1,0 +1,78 @@
+
+#introduction .long-square{
+	margin-top : 2%;
+	width: 100%;
+	background-color: #99DEE6;
+	height: 150px;
+	position: relative;
+	border-top: 2px solid #29B9CA;
+	border-bottom: 2px solid #29B9CA;
+}
+
+#introduction .circle-profile{
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	bottom : -50%;
+	left : 10%;
+	background-color: white;
+	border: 1.5px solid #29B9CA;
+	position: relative;
+}
+
+#introduction .profile{
+	position: absolute;
+	top : 40%;
+	right : -110%;
+}
+
+.profile h2{
+	margin-bottom: 2px;
+	
+}
+
+.profile p{
+	margin-top: 0;
+	font-size: 1.2em;
+}
+
+.introBody{
+	margin-top: 5%;
+	display: flex;
+	margin-left: 20%;
+	flex-direction: column;
+}
+
+.introBody h4{
+	margin-top:5%;
+}
+
+.mileage{
+	display: felx;
+}
+
+
+.gameMileage{
+	display:flex;
+	align-items: center;
+}
+
+.mileageBar { 
+	appearance: none; 
+	width: 30%;
+	height: 40px;
+	} 
+
+.mileageBar::-webkit-progress-bar { 
+	background:#f0f0f0;
+	box-shadow: inset 3px 3px 10px #ccc; 
+	} 
+
+.mileageBar::-webkit-progress-value { 
+
+	background: #1D976C; 
+	background: -webkit-linear-gradient(to right, #93F9B9, #1D976C); 
+	background: linear-gradient(to right, #93F9B9, #1D976C); 
+	}
+

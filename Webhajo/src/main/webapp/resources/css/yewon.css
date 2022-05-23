@@ -1,0 +1,111 @@
+#gList {
+	text-align: center;
+}
+#gList ul {
+	list-style: none;
+	display: inline-block;
+	zoom: 1;
+}
+#gList ul li {
+	float: left;
+	margin: 60px 0px 0px 60px;
+	z-index: 1;
+}
+.body-margin {
+	margin: 0px 100px 0px 100px;
+}
+.body-padding {
+	padding: 100px 0px;
+}
+#preview {
+	background-color: #fff;
+	width: 400px;
+	height: 460px;
+	border-radius: 20px;
+	position: relative;
+	box-shadow: rgb(0 0 0 / 10%) 0px 10px 5px 0px;
+	transform: translateY(0px);
+	transition: transform 0.1s;
+}
+#preview:hover {
+	transform: translateY(-20px);
+}
+img #gThumbnail {
+	position: relative;
+	display: block;
+}
+#gDescript {
+	padding: 20px;
+}
+/*
+#banList {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	text-align: center;
+	z-index: 2;
+}
+*/
+#bestGames {
+	height: 900px;
+	background-color: #F9F3F1;
+}
+#populBox {
+	position: relative;
+	height: 900px;
+	margin: 0px auto;
+	background-image: url("../imgs/garland.png");
+	background-position: 50% 0px;
+	background-repeat: repeat-x;
+	background-size: 60%;
+}
+#cute_tree {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	height: 220px;
+	background-image: url("../imgs/cute_tree.png");
+	background-position: 50% 100%;
+	background-size: 130%;
+	background-repeat: repeat-x;
+	z-index: 2;
+}
+.crown {
+	display: inline-block;
+	position: absolute;
+	top: -50px;
+	width: 80px;
+	height: 80px;
+	background-image: url("../imgs/crown.png");
+	background-size: 80px;
+	z-index: 2;
+}
+#populTitle {
+	padding-top: 60px;
+	text-align: center;
+}
+#populTitle > h2 {
+	display: inline-block;
+	padding: 0px 100px;
+	color: #f00;
+}
+#populTitle > p {
+	display: absolute;
+	top: 200px;
+	color: #00f;
+}
+.rabbit {
+	display: inline-block;
+	width: 80px;
+	height: 102px;
+	background-image: url("../imgs/rabbit.png");
+	background-size: 80px;
+}
+.elephant {
+	display: inline-block;
+	width: 80px;
+	height: 115px;
+	background-image: url("../imgs/elephant.png");
+	background-size: 80px;
+}

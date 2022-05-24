@@ -21,18 +21,16 @@
 			게임 마일리지 획득 이력
 		</h4>
 		<div class="mileage">
-			<div class="gameMileage">
-				<span>게임 마일리지</span> &nbsp; &nbsp;
-				<progress class="mileageBar" value="50" min="0" max="100"></progress>
-			</div>
-			
-
+			<p class="max_score">max 점수</p>
+			<p class="cur_score">현재 점수</p>
+			<label for="mileageBar">게임 마일리지</label> &nbsp;&nbsp;
+			<progress id="mileageBar" class="mileageBar" value="50" min="0" max="100"></progress>
 			<div class="myMileage">
 				나의 게임마일리지 10900
 			</div>
-			
-			<div>
-				783위
+			<div class="rank_frame">
+				<img src="resources/imgs/rank.png" alt="랭킹 배경" width="150px">			
+				<span>783위</span>
 			</div>
 			
 		</div>
@@ -115,24 +113,100 @@
 		<h4>
 			피드백
 		</h4>
-		<table>
-			<tr>
-				<th>
-					날짜
-				</th>
-				<th>
-					게임
-				</th>
-				<th>
-					피드백
-				</th>
-				<th>
-					선생님
-				</th>
-			</tr>
-			
-			
-		</table>
+		
+		<div class="feedback">
+			<table border='1'>
+				<tr>
+					<th>
+						날짜
+					</th>
+					<th>
+						게임
+					</th>
+					<th>
+						피드백
+					</th>
+					<th>
+						선생님
+					</th>
+				</tr>
+				<tr>
+					<td>
+						2022.04.22
+					</td>
+					<td>
+						게미와 배짱이
+					</td>
+					
+					<td>
+						아쉽군
+					</td>
+					<td>
+						홍길동
+					</td>
+				</tr>
+				<tr>
+					<td>
+						2022.04.22
+					</td>
+					<td>
+						게미와 배짱이
+					</td>
+					
+					<td>
+						아쉽군
+					</td>
+					<td>
+						홍길동
+					</td>
+				</tr>
+				<tr>
+					<td>
+						2022.04.22
+					</td>
+					<td>
+						게미와 배짱이
+					</td>
+					
+					<td>
+						아쉽군
+					</td>
+					<td>
+						홍길동
+					</td>
+				</tr>
+				<tr>
+					<td>
+						2022.04.22
+					</td>
+					<td>
+						게미와 배짱이
+					</td>
+					
+					<td>
+						아쉽군
+					</td>
+					<td>
+						홍길동
+					</td>
+				</tr>
+				<tr>
+					<td>
+						2022.04.22
+					</td>
+					<td>
+						게미와 배짱이
+					</td>
+					
+					<td>
+						아쉽군
+					</td>
+					<td>
+						홍길동
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 	
 

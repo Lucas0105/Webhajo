@@ -2,6 +2,8 @@
 	text-align: center;
 }
 #gList ul {
+	padding: 0;
+	margin: 0;
 	list-style: none;
 	display: inline-block;
 	zoom: 1;
@@ -28,7 +30,7 @@
 	transition: transform 0.1s;
 }
 #preview:hover {
-	transform: translateY(-20px);
+	transform: translateY(-40px);
 }
 img #gThumbnail {
 	position: relative;
@@ -47,12 +49,12 @@ img #gThumbnail {
 }
 */
 #bestGames {
-	height: 900px;
+	height: 1000px;
 	background-color: #F9F3F1;
 }
 #populBox {
 	position: relative;
-	height: 900px;
+	height: 1000px;
 	margin: 0px auto;
 	background-image: url("../imgs/garland.png");
 	background-position: 50% 0px;
@@ -64,17 +66,25 @@ img #gThumbnail {
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
-	height: 220px;
+	height: 260px;
 	background-image: url("../imgs/cute_tree.png");
 	background-position: 50% 100%;
 	background-size: 130%;
 	background-repeat: repeat-x;
 	z-index: 2;
+	animation: shake-gently 2s infinite;
+}
+@keyframes shake-gently {
+	50% {
+		transform-origin: 0 100%;
+		transform: rotateX(60deg);
+	}
 }
 .crown {
-	display: inline-block;
+	display: block;
 	position: absolute;
-	top: -50px;
+	left: 160px;
+	top: -60px;
 	width: 80px;
 	height: 80px;
 	background-image: url("../imgs/crown.png");
@@ -82,18 +92,27 @@ img #gThumbnail {
 	z-index: 2;
 }
 #populTitle {
-	padding-top: 60px;
+	padding: 60px 0 0 0;
+	margin: 0 0 20px 0;
 	text-align: center;
 }
-#populTitle > h2 {
-	display: inline-block;
-	padding: 0px 100px;
-	color: #f00;
-}
 #populTitle > p {
+	font-family: 'BMJUA';
+	font-size: 30px;
 	display: absolute;
 	top: 200px;
-	color: #00f;
+	color: #595959;
+}
+#populTitle > h2 {
+	font-family: 'Hanna';
+	font-size: 60px;
+	display: inline-block;
+	padding: 0px 20px;
+	color: #66C68C;
+}
+#populTitle > h2.orange {
+	color: #FF7050;
+	text-shadow: -2px 0px #ffffff, 0px 2px #ffffff, 2px 0px #ffffff, 0px -2px #ffffff;
 }
 .rabbit {
 	display: inline-block;
@@ -108,4 +127,20 @@ img #gThumbnail {
 	height: 115px;
 	background-image: url("../imgs/elephant.png");
 	background-size: 80px;
+}
+@font-face {
+  font-family: 'Hanna';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.eot);
+  src: url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }

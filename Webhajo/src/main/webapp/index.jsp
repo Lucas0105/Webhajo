@@ -18,14 +18,13 @@
 			<div id="populTitle">
 				<p>이 게임은 어때요?</p>
 				<div class="elephant"></div>
-				<h2>인기 게임</h2>
+				<h2 class="orange">인기</h2><h2>게임</h2>
 				<div class="rabbit"></div>
 			</div>
-			<div id="cute_tree"></div>
 			<!-- preview -->
 			<div id="gList">
 				<ul>
-					<li id="preview">
+					<li id="preview" style="margin: 60px 0 0 0">
 						<span class="crown"></span>
 						<a href="">
 							<img id="gThumbnail" width="400px" src="resources/imgs/webhajo_logo.png">
@@ -37,6 +36,7 @@
 					</li>
 				</ul>
 			</div>
+			<div id="cute_tree"></div>
 		</div>
 	</div>
 </div>

@@ -49,13 +49,21 @@
 }
 
 .mileage{
-	display: felx;
-}
-
-
-.gameMileage{
 	display:flex;
 	align-items: center;
+	position: relative;
+}
+
+.max_score{
+	position : absolute;
+	left: 35%;
+	bottom: 10%;
+}
+
+.cur_score{
+	position : absolute;
+	left: 22%;
+	top: 10%;
 }
 
 .mileageBar { 
@@ -75,4 +83,91 @@
 	background: -webkit-linear-gradient(to right, #93F9B9, #1D976C); 
 	background: linear-gradient(to right, #93F9B9, #1D976C); 
 	}
+	
+.myMileage{
+	border: 1px solid black;
+	background-color: #F2F0EE;
+	border-radius: 10px;
+	padding: 5px;
+	margin-left: 5%;
+}
 
+.rank_frame{
+	position: relative;
+}
+
+.rank_frame span{
+	position: absolute;
+	top: 35%;	
+	left: 35%;
+	font-size: 1.2em;
+}
+.basicInfo{
+	width: 100%;
+	margin-left: 5%;
+	
+}
+
+.basicInfo td{
+	text-align: center;
+}
+
+		
+.basicInfo table{
+	border : 1px solid black;
+	border-collapse : collapse;
+	width: 57%;
+}
+
+.basicInfo td{
+	border : 1px solid black;
+	border-collapse : collapse;
+}
+
+.basicInfo td:nth-child(odd) {
+	background-color: #F2F0EE;
+	width: 20%;
+	height: 50px;
+}
+
+.basicInfo td:nth-child(2n) {
+	width: 30%;
+}
+
+.feedback{
+	max-width: 100%;
+	margin-left: 5%;	
+}
+
+.feedback table{
+	border : 1px solid black;
+	border-collapse : collapse;	
+	width: 60%;
+	margin-bottom: 5%;
+}
+
+.feedback th{
+	background-color: #F2F0EE;
+	border-top: 2px solid red;
+}
+
+.feedback td{
+	text-align: center;
+}
+
+.feedback td:first-child {
+	width: 20%;
+}
+
+
+.feedback td:nth-child(2) {
+	width: 30%;
+}
+
+.feedback td:nth-child(3) {
+	width: 40%;
+}
+
+.feedback td:nth-child(4) {
+	width: 10%;
+}

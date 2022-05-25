@@ -91,26 +91,26 @@ img #gThumbnail {
 	background-size: 80px;
 	z-index: 2;
 }
-#populTitle {
+#populTitle, #subTitle {
 	padding: 60px 0 0 0;
 	margin: 0 0 20px 0;
 	text-align: center;
 }
-#populTitle > p {
+#populTitle > p, #subTitle > p {
 	font-family: 'BMJUA';
 	font-size: 30px;
 	display: absolute;
 	top: 200px;
 	color: #595959;
 }
-#populTitle > h2 {
+#populTitle > h2, #subTitle > h1 {
 	font-family: 'Hanna';
 	font-size: 60px;
 	display: inline-block;
 	padding: 0px 20px;
 	color: #66C68C;
 }
-#populTitle > h2.orange {
+#populTitle > h2.orange, #subTitle > h1.orange {
 	color: #FF7050;
 	text-shadow: -2px 0px #ffffff, 0px 2px #ffffff, 2px 0px #ffffff, 0px -2px #ffffff;
 }
@@ -143,4 +143,25 @@ img #gThumbnail {
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+#subTitle {
+	padding: 0;
+}
+#subTitle > h1 {
+	font-size: 90px;
+}
+h2#game_title {
+	font-family: 'Hanna';
+	color: #595959;
+	font-size: 50px;
+}
+#game_descript {
+	margin: 41.5px 0 0 0;
+	font-family: 'BMJUA';
+	font-size: 30px;
+	border: hidden;
+	resize: none;
+	overflow-y: hidden;
+	width: 100%;
+	text-align: justify;
 }

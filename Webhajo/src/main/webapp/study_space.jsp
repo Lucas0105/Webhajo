@@ -3,7 +3,10 @@
 <%@ include file="header.jsp" %>
 <link rel="stylesheet" href="resources/css/yewon.css">
 <div class="body-margin body-padding">
-	<h1 align="center">학습공간</h1>
+	<div id="subTitle">
+		<h1 class="orange">학습</h1><h1>공간</h1>
+		<p>마음에 드는 게임을 골라보아요!</p>
+	</div>
 	<hr>
 	
 	<!-- preview -->
@@ -12,7 +15,7 @@
 			<li id="preview">
 				<a href="">
 					<img id="gThumbnail" width="400px" src="resources/imgs/webhajo_logo.png">
-					<div id="gDescript">
+					<div>
 						<h2>게임 이름</h2>
 						<div>게임 내용</div>
 					</div>
@@ -21,7 +24,7 @@
 			<li id="preview">
 				<a href="">
 					<img id="gThumbnail" width="400px" src="resources/imgs/webhajo_logo.png">
-					<div id="gDescript">
+					<div>
 						<h2>게임 이름</h2>
 						<div>게임 내용</div>
 					</div>

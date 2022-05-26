@@ -40,7 +40,7 @@
 .introBody{
 	margin-top: 5%;
 	display: flex;
-	margin-left: 20%;
+	margin-left: 27%;
 	flex-direction: column;
 }
 
@@ -103,7 +103,7 @@
 	font-size: 1.2em;
 }
 .basicInfo{
-	width: 100%;
+	width: 60%;
 	margin-left: 5%;
 	
 }
@@ -116,7 +116,7 @@
 .basicInfo table{
 	border : 1px solid black;
 	border-collapse : collapse;
-	width: 57%;
+	width: 100%;
 }
 
 .basicInfo td{
@@ -135,14 +135,14 @@
 }
 
 .feedback{
-	max-width: 100%;
+	max-width: 60%;
 	margin-left: 5%;	
 }
 
 .feedback table{
 	border : 1px solid black;
 	border-collapse : collapse;	
-	width: 60%;
+	width: 100%;
 	margin-bottom: 5%;
 }
 

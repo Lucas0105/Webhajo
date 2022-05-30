@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="resources/css/register.css">
-<link rel="stylesheet" href="css/bootstrap.css">
 <body>
 	<div class="register">
 		<div class="container">

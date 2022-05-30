@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-		<footer>
+		<footer style="    position: absolute;left: 0;bottom: 0;width: 100%;">
 		<p>
 			ⓒ Webhajo Corp.<br/>
 			

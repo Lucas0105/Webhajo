@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="resources/css/register.css">
@@ -11,8 +11,8 @@
 	<div class="register">
 		<div class="container">
 			<img alt="garland" src="resources/imgs/garland.png" style="width:100%; margin-bottom:2%;">
-			<div class="title">È¸¿øÁ¤º¸ ÀÔ·Â</div>
-			<p style="text-align: center;">È¸¿ø Á¤º¸¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.</p>
+			<div class="title">íšŒì›ì •ë³´ ìž…ë ¥</div>
+			<p style="text-align: center;">íšŒì› ì •ë³´ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.</p>
 			<div style="display: flex; justify-content: center;">
 				<img alt="num1" src="resources/imgs/number_one.png" style="width: 50px; padding-right: 20px;">
 				<img alt="num2" src="resources/imgs/number_2.png" style="width: 50px; padding-right: 20px;">
@@ -22,52 +22,57 @@
 			<div style="position: relative; left: 25%; width: 50%;">
 			<div style="margin-top: 15px; display: flex; flex-direction: row; padding-top: 10px;">
 				<div style="display: flex; flex-direction: column; ">
-					<div class="type"><strong>È¸¿ø À¯Çü</strong></div>
+					<div class="type"><strong>íšŒì› ìœ í˜•</strong></div>
 					<div style="display: flex;">
-						<div><input type="checkbox"/>ÀÏ¹Ý</div>
-						<div style="margin-left: 25px;"><input type="checkbox"/>¼±»ý´Ô</div>
+						<div><input type="radio" value="student" id="student" name="user"/>í•™ìƒ</div>
+						<div style="margin-left: 25px;"><input type="radio" value="teacher" id="teacher" name="user"/>ì„ ìƒë‹˜</div>
 					</div>
 				</div>
 				<div style="width: 30%;"></div>
 				<div style="display: flex; flex-direction: column; ">
-					<div class="type"><strong>¼ºº°</strong></div>
+					<div class="type"><strong>ì„±ë³„</strong></div>
 					<div>
 						<select name="gender" id="genders" style="padding:2% 1% 2% 1%;">
-						  <option value="gender">¼ºº°</option>
-						  <option value="male">³²¼º</option>
-						  <option value="female">¿©¼º</option>
+						  <option value="gender">ì„±ë³„</option>
+						  <option value="male">ë‚¨ì„±</option>
+						  <option value="female">ì—¬ì„±</option>
 						</select>
 					</div>
 				</div>
 			</div>
-			
+
 			<div>
-				<div class="type"><strong>´Ð³×ÀÓ</strong></div>
+				<div class="type"><strong>ë‹‰ë„¤ìž„</strong></div>
 				<div><input type="text" style="width:100%"/></div>
 			</div>
 			
 			<div>
-				<div class="type"><strong>ÀÛÇ° °øÀ¯ ÇÐ³â</strong></div>
+				<div class="type"><strong>ì´ë¦„</strong></div>
+				<div><input type="text" style="width:100%"/></div>
+			</div>
+			
+			<div>
+				<div class="type"><strong>í•™ë…„</strong></div>
 				<div>
 					<select name="grade" id="grades" style="padding:2% 1% 2% 1%;">
-						<option value="grade">¼±ÅÃÇØÁÖ¼¼¿ä</option>
-						<option value="grade1">1ÇÐ³â</option>
-						<option value="grade2">2ÇÐ³â</option>
-						<option value="grade3">3ÇÐ³â</option>
-						<option value="grade4">4ÇÐ³â</option>
-						<option value="grade5">5ÇÐ³â</option>	
-						<option value="grade6">6ÇÐ³â</option>						
+						<option value="grade">ì„ íƒí•´ì£¼ì„¸ìš”</option>
+						<option value="grade1">1í•™ë…„</option>
+						<option value="grade2">2í•™ë…„</option>
+						<option value="grade3">3í•™ë…„</option>
+						<option value="grade4">4í•™ë…„</option>
+						<option value="grade5">5í•™ë…„</option>	
+						<option value="grade6">6í•™ë…„</option>						
 					</select>
 				</div>
 			</div>
 
 			<div>
-				<div class="type"><strong>ÀÌ¸ÞÀÏ</strong></div>
+				<div class="type"><strong>ì´ë©”ì¼</strong></div>
 				<div><input type="text" style="width: 100%"/></div>
 			</div>
 			<div style="display:flex; justify-content: center;">
-				<button class="buttonZip" onclick="location.href='register.jsp'">Ãë¼Ò</button>
-				<button class="buttonZip" onclick="location.href='register_step3.jsp'">´ÙÀ½</button>
+				<button class="buttonZip" onclick="location.href='register.jsp'">ì·¨ì†Œ</button>
+				<button class="buttonZip" onclick="location.href='register_step3.jsp'">ë‹¤ìŒ</button>
 			</div>
 			
 			</div>

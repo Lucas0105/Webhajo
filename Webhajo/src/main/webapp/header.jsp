@@ -7,6 +7,14 @@
 <title>Social junior</title>
 <link rel="stylesheet" href="resources/css/main.css">
 </head>
+
+<%
+	String nickname = null;
+	
+	nickname = (String)session.getAttribute("nickname");
+
+%>
+
 <body>
 	<div id="wrap">
 		<header>
@@ -22,10 +30,32 @@
 					<a href = "mypage.jsp">마이페이지 </a>	
 				</div>
 				 
+				<%
+					if(nickname == null){
+						
+					
+				%>				 
+
 				<div id="login">
 					<a href = "login.jsp">로그인</a>
 					<a href = "register.jsp">회원가입</a>
 				</div>
+				<%
+					}
+					else{
+				%>
+				<div id="login">
+					<a href = ""><%=nickname%></a>
+					<a href = "logout.jsp">로그아웃</a>
+				</div>
+				<%
+					}
+				%>					
+
 			</nav>
 		</header>
-	
+		<script>
+			function logout(){
+				console.log("test");
+			}
+		</script>

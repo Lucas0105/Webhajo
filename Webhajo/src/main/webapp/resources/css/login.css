@@ -1,0 +1,31 @@
+.container{
+	display: flex;
+	width: 70%;
+	flex-direction: column;		
+}
+
+
+.login{
+	display: flex;
+	justify-content: center;
+	
+}
+
+.title{
+	padding-top: 3%;
+	font-weight: bold;
+	font-size:1.5em;
+	text-align: center;
+}
+
+.buttonZip {
+	width: 400px;
+	height: 50px;
+	margin-top: 20px;
+	margin-left: 3%;
+	
+}
+
+.type{
+	margin-top: 20px;
+}

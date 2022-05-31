@@ -1,0 +1,43 @@
+.condition{
+	padding: 5px 5px 5px 5px;
+	height:150px;
+	width:100%;
+	border:1px solid #ccc;
+	overflow:auto;
+}
+
+.container{
+	display: flex;
+	width: 70%;
+	flex-direction: column;		
+}
+
+
+.register{
+	display: flex;
+	justify-content: center;
+}
+
+.title{
+	font-weight: bold;
+	font-size:2em;
+	text-align: center;
+}
+
+.buttonZip {
+	width: 400px;
+	height: 50px;
+	margin-top: 20px;
+	margin-left: 3%;
+	
+}
+
+.type{
+	display: flex;
+	margin-top: 20px;
+}
+
+input[type="text"]{
+	padding:10px;
+}
+

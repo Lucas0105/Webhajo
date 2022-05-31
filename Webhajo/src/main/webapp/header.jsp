@@ -11,18 +11,20 @@
 	<div id="wrap">
 		<header>
 			<nav>
-				<img src="resources/imgs/webhajo_logo.png" alt="소셜주녀 로고" width="150px">
+				<a href = "index.jsp">
+					<img src="resources/imgs/webhajo_logo.png" alt="소셜주녀 로고" width="150px">
+				</a>
 			
 				<div id = menue>
-					<a href = "">소개</a>
+					<a href = "intro.jsp">소개</a>
 					<a href = "">공지사항</a>
-					<a href = "">학습공간</a>
-					<a href = "">마이페이지 </a>	
+					<a href = "study_space.jsp">학습공간</a>
+					<a href = "mypage.jsp">마이페이지 </a>	
 				</div>
 				 
 				<div id="login">
-					<a href = "">로그인</a>
-					<a href = "">회원가입</a>
+					<a href = "login.jsp">로그인</a>
+					<a href = "register.jsp">회원가입</a>
 				</div>
 			</nav>
 		</header>

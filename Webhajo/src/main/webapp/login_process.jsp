@@ -14,6 +14,7 @@
 		String dbURL = "jdbc:mysql://13.209.254.90:57668/webhajo?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 		String dbID = "root";
 		String dbPassword = "webhajo123";
+		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
   		pstmt=conn.prepareStatement("SELECT * FROM user WHERE id=?");
   		pstmt.setString(1,id);
@@ -32,13 +33,9 @@
   			}
   		}
   		
-  		System.out.println(session.getAttribute("userid"));
-  		System.out.println(session.getAttribute("type"));
-  		System.out.println(session.getAttribute("nickname"));
   		out.println("<script>");
 		out.println("alert('아이디 혹은 비밀번호가 틀렸습니다.')");
   		out.println("history.back()");
-  		//out.println("location.href='login.jsp'");
   		out.println("</script>");
 	}catch(Exception e){
 		e.printStackTrace();

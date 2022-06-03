@@ -20,7 +20,7 @@
 			</div>
 			
 			
-			<form name="register_form" onsubmit="register_btn()" method="get">
+			<form name="register_form" action="register_step3.jsp" method="get">
 			<div style="position: relative; left: 25%; width: 50%;">
 			<div style="margin-top: 15px; display: flex; flex-direction: row; padding-top: 10px;">
 				<div style="display: flex; flex-direction: column; ">
@@ -36,8 +36,8 @@
 					<div>
 						<select name="gender" id="genders" style="padding:2% 1% 2% 1%;">
 						  <option value="gender">성별</option>
-						  <option value="male">남성</option>
-						  <option value="female">여성</option>
+						  <option value="M">남성</option>
+						  <option value="W">여성</option>
 						</select>
 					</div>
 				</div>
@@ -45,12 +45,12 @@
 
 			<div>
 				<div class="type"><strong>닉네임</strong></div>
-				<div><input type="text" id="nickname" style="width:100%"/></div>
+				<div><input type="text" name="nickname" id="nickname" style="width:100%"/></div>
 			</div>
 			
 			<div>
 				<div class="type"><strong>이름</strong></div>
-				<div><input type="text" id="userName" style="width:100%"/></div>
+				<div><input type="text" name="userName" id="userName" style="width:100%"/></div>
 			</div>
 			
 			<div>
@@ -70,11 +70,11 @@
 
 			<div>
 				<div class="type"><strong>이메일</strong></div>
-				<div><input type="text" id="userEmail" style="width: 100%"/></div>
+				<div><input type="text" name="userEmail" id="userEmail" style="width: 100%"/></div>
 			</div>
 			<div style="display:flex; justify-content: center;">
 				<button class="buttonZip" onclick="location.href='register.jsp'">취소</button>
-				<button class="buttonZip" type="submit">다음</button>
+				<button class="buttonZip" onclick="register_btn()">다음</button>
 			</div>
 			
 			</div>
@@ -86,7 +86,7 @@
 </body>
 <script>
 	function register_btn(){
-	
+		event.preventDefault();
 		var isFull = true;
 		
 		//회원 유형 
@@ -116,12 +116,10 @@
 		if(genders.value == "gender"){
 			isFull = false;
 		}
-		else if (genders.value == "female"){
-			gender = 'W';
+		else {
+			gender = genders.value;
 		}
-		else{
-			gender = 'M';
-		}
+
 		
 		//닉네임
 		var nickname = document.getElementById("nickname").value;
@@ -152,7 +150,7 @@
 
 		
 		if(isFull){
-			document.register_form.submit("register_step3.jsp");
+			document.register_form.submit();
 		}
 		else{
 			alert("빈칸을 모두 채워주세요.");

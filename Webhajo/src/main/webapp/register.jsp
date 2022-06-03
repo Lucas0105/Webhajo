@@ -20,7 +20,7 @@
 			</div>
 			
 			<div style="margin-top: 15px;">
-			<input type="checkbox"/>소셜주녀 이용약관에 동의합니다</div>
+			<input id="agree1" type="checkbox"/>소셜주녀 이용약관에 동의합니다</div>
 			
 			<div class="condition" style="margin-top:5px;">
 			제1장 총칙
@@ -48,7 +48,7 @@
 			</div>
 			
 			<div style="margin-top: 30px;">
-			<input type="checkbox" />개인정보 수집 및 이용에 동의합니다.</div>
+			<input id="agree2" type="checkbox" />개인정보 수집 및 이용에 동의합니다.</div>
 			
 			
 			<div class="condition" style="margin-top:5px;">
@@ -59,9 +59,20 @@
 			
 			<div style="display:flex; justify-content: center;">
 				<button class="buttonZip">취소</button>
-				<button class="buttonZip" onclick="location.href='register_step2.jsp'">다음</button>
+				<button class="buttonZip" onclick="register_btn()">다음</button>
 			</div>
 		</div>
 	</div>
 </body>
+<script>
+	function register_btn(){
+		
+		if(document.getElementById("agree1").checked && document.getElementById("agree2").checked){
+			location.href="register_step2.jsp";
+		}
+		else{
+			alert("이용약관을 동의해주세요.");
+		}
+	}
+</script>
 </html>

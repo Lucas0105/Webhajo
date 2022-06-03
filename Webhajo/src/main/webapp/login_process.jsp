@@ -10,6 +10,8 @@
 	PreparedStatement pstmt=null;
 	ResultSet rs=null;
 	
+	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+	
 	try {
 		String dbURL = "jdbc:mysql://13.209.254.90:57668/webhajo?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 		String dbID = "root";
@@ -27,9 +29,15 @@
   				session.setAttribute("type",rs.getString("type"));
   				session.setAttribute("nickname",rs.getString("nickname"));
   				
+  				PreparedStatement pstmt1=conn.prepareStatement("UPDATE user SET logindt= '"+timestamp+"' WHERE id = (?)");
+  				pstmt1.setString(1, id);
+  				pstmt1.executeUpdate();
+  				
   				out.println("<script>");
   		  		out.println("location.href='index.jsp'");
   		  		out.println("</script>");
+  		  		
+  		  		
   			}
   		}
   		

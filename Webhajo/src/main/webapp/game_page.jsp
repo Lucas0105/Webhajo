@@ -9,18 +9,15 @@
 	<hr>
 	
 	<div class="game-body">
-		<h2 id="game_title">게임 제목</h2>
+		<h2 id="game_title">개미와 베짱이</h2>
 			<div align="center">
-				<div id="whole-wrapper">
+				<div id="whole-wrapper" onclick="parse(++cursor)">
 					<div id="character-wrapper"></div>
 					
 					<div id="chat-wrapper">
 						<div id="name"></div>
 						<div id="text-wrapper">
 							<div id="text"></div>
-							<div id="next" onclick="parse(++cursor)">
-								<img src="resources/game_imgs/next.png">
-							</div>
 						</div>
 						<div id="setting">
 							<span>Log</span>
@@ -51,10 +48,7 @@ const scenario = {
 		  {
 			"name": "베짱이",
 			"text": "첫번째 샘플 텍스트입니다.",
-			"image": {
-			  "src": 'resources/game_imgs/grasshopper_default.png',
-			  "alt": '김애저'
-			}
+			"image": "resources/game_imgs/grasshopper_default.png"
 		  },
 		  {
 			"name": "김애저",
@@ -66,44 +60,22 @@ const scenario = {
 		  {
 			"name": "rladowj",
 			"text": "왈왈",
-			"image": {
-			  "src": 'resources/game_imgs/grasshopper_talking.png',
-			  "alt": '김애저'
-			}
+			"image": "resources/game_imgs/grasshopper_default.png"
 		  },
 		  {
 			"select": [
 			  {
 				"text": "선택지 1번",
-				"variable": [
-				  {
-					"name": "캐릭터1",
-				  },
-				  {
-					"name": "캐릭터2",
-				  }
-				],
 				"jump": "select1"
 			  }, {
 				"text": "선택지 2번",
-				"variable": [
-				  {
-					"name": "캐릭터1",
-				  },
-				  {
-					"name": "캐릭터2",
-				  }
-				]
 			  }
 			]
 		  },
 		  {
 			"name": "김애저",
 			"text": "선택완료",
-			"image": {
-			  "src": 'resources/game_imgs/grasshopper_talking.png',
-			  "alt": '김애저'
-			}
+			"image": "resources/game_imgs/grasshopper_default.png"
 		  }
 		],
 		"select1": [
@@ -124,7 +96,7 @@ const jumping = (jump) => {
 }
 
 const handleSelect = (v) => {
-	const {variable, jump} = JSON.parse(v)
+	const {jump} = JSON.parse(v)
 	
 	//jump가 있으면 점프, 없으면 시나리오를 이어서 출력
 	if (!!jump) {
@@ -144,11 +116,14 @@ const parse = (i = 0) => {
 	document.getElementById('selector-wrapper').style.display = 'none';
 	document.getElementById('character-wrapper').innerHTML = null;
 	
-	//텍스트 출력
-	document.getElementById('text').innerText = text;
+	//텍스트 유무에 따른 출력
+	if (!!text) {
+		document.getElementById('chat-wrapper').style.display = 'grid';
+		document.getElementById('text').innerText = text;
+	}
 
 
-	//이름유무에 따른 출력
+	//이름 유무에 따른 출력
 	if (!!name) {
 	  document.getElementById('name').style.display = 'grid';
 	  document.getElementById('name').innerText = name;
@@ -156,24 +131,19 @@ const parse = (i = 0) => {
 
 	//이미지 유무에 따른 출력
 	if (!!image) {
-	  document.getElementById('character-wrapper').innerHTML = `<img src="${image.src}" alt="${image.alt}"/>`
+	  document.getElementById('character-wrapper').innerHTML = `<img src=\${image}/>`
 	}
 	
 	//선택지가 있으면 선택지 출력
 	if (!!select) {
 	  document.getElementById('selector-wrapper').style.display = 'grid';
 	  document.getElementById('selector').innerHTML = select.map(i =>
-	  `<li onclick="handleSelect(${i})">${i.text}</li>`).join('')
+	  `<li onclick="handleSelect(\${JSON.stringify(i)})">\${i.text}</li>`).join('')
 	}
 	
 	//jump가 있으면 해당 시나리오 오브젝트로 이동
 	if (!!jump) {
 	  jumping(jump);
-	}
-
-	//커서가 시나리오의 끝에 오면 화살표 지움. 점프가 있으면 뒤가 이어지니 계속 출력
-	if (scenario[currentPhase].length - 1 === cursor && !jump) {
-	  document.getElementById('next').style.display = 'none';
 	}
 }
  
@@ -188,6 +158,6 @@ const parse = (i = 0) => {
 	}
 	
 	var txt = document.getElementById("game_descript");
-	txt.value = "  속담은 예로부터 한 민족 혹은 사회에서 사람들 사이에서 널리 말하여져서 굳어진 어구로 전해지는 말이다. 격언이나 잠언과 유사하다. 속담은 그 속담이 통용되는 공동체의 의식 반영하기 때문에 언어학이나 문화인류학 등에서 연구 대상으로 많이 삼고 있다. 문학 작품에도 많이 등장한다. 위키백과";
+	txt.value = "  무더운 여름, 개미는 땀을 뻘벌 흘리며 일을 하고 있어요. 베짱이는 나무 그늘에서 노래를 부르며 놀고 있었죠. 개미는 베짱이에게 어떤 말을 해줄 수 있을까요? 베짱이는 개미를 어떻게 대해야 할까요? 이야기 속으로 빠져봅시다.";
 </script>
 <%@ include file="footer.jsp" %>

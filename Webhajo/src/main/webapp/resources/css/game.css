@@ -189,7 +189,7 @@ h2#game_title {
 #character-wrapper > img{
     max-height: 600px;
     position: absolute;
-    bottom: 120px;
+    bottom: 200px;
     left: 120px;
     transform: scale(1.5);
 }
@@ -230,24 +230,6 @@ h2#game_title {
 
 #text {
     width: 100%;
-}
-
-#next {
-    grid-area: next;
-    display: grid;
-    place-items: end;
-}
-
-#next > img {
-	width: 20%;
-	opacity: 50%;
-	position: relative;
-}
-
-#next > img:hover {
-	width: 20%;
-	opacity: 80%;
-	position: relative;
 }
 
 #setting {

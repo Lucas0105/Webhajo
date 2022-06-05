@@ -186,11 +186,19 @@ h2#game_title {
 
 }
 
-#character-wrapper > img{
+div#character1-wrapper {
     max-height: 600px;
     position: absolute;
     bottom: 200px;
     left: 120px;
+    transform: scale(1.5);
+}
+
+div#character2-wrapper {
+    max-height: 600px;
+    position: absolute;
+    bottom: 200px;
+    right: 120px;
     transform: scale(1.5);
 }
 

@@ -12,7 +12,8 @@
 		<h2 id="game_title">개미와 베짱이</h2>
 			<div align="center">
 				<div id="whole-wrapper" onclick="parse(++cursor)">
-					<div id="character-wrapper"></div>
+					<div id="character1-wrapper"></div>
+					<div id="character2-wrapper"></div>
 					
 					<div id="chat-wrapper">
 						<div id="name"></div>
@@ -39,50 +40,57 @@ let currentPhase = "start";
 
 const scenario = {
 		"start": [
-		  {
-			"name": "베짱이",
-			"text": "첫번째 샘플 텍스트입니다.",
-			"image": './resources/game_imgs/grasshopper_default.png'
-		  },
-		  {
+		{
+			"bg": "./resources/game_imgs/start.png",
+			"text": "클릭하여 게임을 시작합니다."
+		},
+		{
+			"bg": "./resources/game_imgs/background_spring.png",
+			"text": "옛날 옛날에 개미와 베짱이가 살았어요."
+		},
+		{
+			"char1": './resources/game_imgs/grasshopper_default.png',
+			"text": "베짱이는 노는 것을 매우 좋아하는 친구랍니다.\n베짱이는 오늘도 아무 일도 하지 않았어요."
+		},
+		{
 			"name": "김애저",
 			"text": "두번쨰 샘플 텍스트입니다.",
-		  },
-		  {
+		},
+		{
 			"text": "이름이 없는 경우에는 이름 창이 사라졌으면 좋겠어요."
-		  },
-		  {
+		},
+		{
 			"name": "rladowj",
 			"text": "왈왈",
-			"image": './resources/game_imgs/grasshopper_default.png',
+			"char1": './resources/game_imgs/grasshopper_default.png',
 			"bg": "./resources/game_imgs/background_winter.png"
-		  },
-		  {
+		},
+		{
 			"select": [
-			  {
+			{
 				"text": "선택지 1번",
 				"jump": "select1"
-			  }, {
+			}, {
 				"text": "선택지 2번",
-			  }
+			}
 			]
-		  },
-		  {
+		},
+		{
 			"name": "김애저",
 			"text": "선택완료",
-			"image": './resources/game_imgs/grasshopper_default.png'
-		  }
+			"char2": './resources/game_imgs/ant_default.png'
+		}
 		],
 		"select1": [
-		  {
+		{
 			"text": "temp",
-		  },
-		  {
-			  "text": "선택지 1번을 클릭 했습니다.",
-		  },
-		  {
+		},
+		{
+			"text": "선택지 1번을 클릭 했습니다.",
+		},
+		{
 			"jump": "start"
-		  },
+		},
 		]
 	  }
 
@@ -105,14 +113,15 @@ const handleSelect = (v) => {
 
 const parse = (i = 0) => {
 
-	const {text, name, image, select, jump, bg} = scenario[currentPhase][i];
+	const {text, name, char1, char2, select, jump, bg} = scenario[currentPhase][i];
 
 
 	//화면 초기화
 	document.getElementById('name').style.display = 'none';
 	document.getElementById('selector-wrapper').style.display = 'none';
 	document.getElementById('chat-wrapper').style.display = 'none';
-	document.getElementById('character-wrapper').innerHTML = null;
+	document.getElementById('character1-wrapper').innerHTML = null;
+	document.getElementById('character2-wrapper').innerHTML = null;
 	
 	//텍스트 유무에 따른 출력
 	if (!!text) {
@@ -127,9 +136,12 @@ const parse = (i = 0) => {
 	  document.getElementById('name').innerText = name;
 	}
 
-	//이미지 유무에 따른 출력
-	if (!!image) {
-	  document.getElementById('character-wrapper').innerHTML = `<img src="\${image}"/>`
+	//캐릭터 이미지 유무에 따른 출력
+	if (!!char1) {
+	  document.getElementById('character1-wrapper').innerHTML = `<img src="\${char1}"/>`
+	}
+	if (!!char2) {
+	  document.getElementById('character2-wrapper').innerHTML = `<img src="\${char2}"/>`
 	}
 	
 	//선택지가 있으면 선택지 출력

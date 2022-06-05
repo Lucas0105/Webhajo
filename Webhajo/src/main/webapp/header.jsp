@@ -27,7 +27,7 @@
 					<a href = "intro.jsp">소개</a>
 					<a href = "">공지사항</a>
 					<a href = "study_space.jsp">학습공간</a>
-					<a href = "mypage.jsp">마이페이지 </a>	
+					<a href = "" onclick="mypage()">마이페이지 </a>	
 				</div>
 				 
 				<%
@@ -57,5 +57,28 @@
 		<script>
 			function logout(){
 				console.log("test");
+			}
+			
+			function mypage(){
+				event.preventDefault();
+				<%
+				String type = (String)session.getAttribute("type");
+				if(nickname  == null){
+				%>
+					alert("로그인을 후 이용해주세요.");
+				<%
+				}
+				else if(type.equals("student")){
+					%>
+					location.href = "mypage.jsp";
+				<%
+				} else{
+					
+				%>
+					location.href = "teacher.jsp";
+				<%
+				}
+				%>
+				
 			}
 		</script>

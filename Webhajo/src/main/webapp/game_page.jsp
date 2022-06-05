@@ -19,10 +19,6 @@
 						<div id="text-wrapper">
 							<div id="text"></div>
 						</div>
-						<div id="setting">
-							<span>Log</span>
-							<span>Skip</span>
-						</div>
 					</div>
 					
 					<div id="selector-wrapper">
@@ -41,14 +37,12 @@
 let cursor = 0;
 let currentPhase = "start";
 
-const favor = {}
-
 const scenario = {
 		"start": [
 		  {
 			"name": "베짱이",
 			"text": "첫번째 샘플 텍스트입니다.",
-			"image": "resources/game_imgs/grasshopper_default.png"
+			"image": './resources/game_imgs/grasshopper_default.png'
 		  },
 		  {
 			"name": "김애저",
@@ -60,7 +54,8 @@ const scenario = {
 		  {
 			"name": "rladowj",
 			"text": "왈왈",
-			"image": "resources/game_imgs/grasshopper_default.png"
+			"image": './resources/game_imgs/grasshopper_default.png',
+			"bg": "./resources/game_imgs/background_winter.png"
 		  },
 		  {
 			"select": [
@@ -75,16 +70,18 @@ const scenario = {
 		  {
 			"name": "김애저",
 			"text": "선택완료",
-			"image": "resources/game_imgs/grasshopper_default.png"
+			"image": './resources/game_imgs/grasshopper_default.png'
 		  }
 		],
 		"select1": [
 		  {
-			"text": "선택지 1번을 클릭 했습니다",
+			"text": "temp",
 		  },
 		  {
-			"text": "시작으로 돌아가기",
-			"jump" : "start"
+			  "text": "선택지 1번을 클릭 했습니다.",
+		  },
+		  {
+			"jump": "start"
 		  },
 		]
 	  }
@@ -96,8 +93,8 @@ const jumping = (jump) => {
 }
 
 const handleSelect = (v) => {
-	const {jump} = JSON.parse(v)
-	
+	const {text, jump} = JSON.parse(decodeURI(v))
+
 	//jump가 있으면 점프, 없으면 시나리오를 이어서 출력
 	if (!!jump) {
 	  jumping(jump)
@@ -108,12 +105,13 @@ const handleSelect = (v) => {
 
 const parse = (i = 0) => {
 
-	const {text, name, image, select, jump} = scenario[currentPhase][i];
+	const {text, name, image, select, jump, bg} = scenario[currentPhase][i];
 
 
 	//화면 초기화
 	document.getElementById('name').style.display = 'none';
 	document.getElementById('selector-wrapper').style.display = 'none';
+	document.getElementById('chat-wrapper').style.display = 'none';
 	document.getElementById('character-wrapper').innerHTML = null;
 	
 	//텍스트 유무에 따른 출력
@@ -131,20 +129,24 @@ const parse = (i = 0) => {
 
 	//이미지 유무에 따른 출력
 	if (!!image) {
-	  document.getElementById('character-wrapper').innerHTML = `<img src=\${image}/>`
+	  document.getElementById('character-wrapper').innerHTML = `<img src="\${image}"/>`
 	}
 	
 	//선택지가 있으면 선택지 출력
 	if (!!select) {
 	  document.getElementById('selector-wrapper').style.display = 'grid';
 	  document.getElementById('selector').innerHTML = select.map(i =>
-	  `<li onclick="handleSelect(\${JSON.stringify(i)})">\${i.text}</li>`).join('')
+	  `<li onclick="handleSelect('\${encodeURI(JSON.stringify(i))}')">\${i.text}</li>`).join('')
 	}
 	
 	//jump가 있으면 해당 시나리오 오브젝트로 이동
 	if (!!jump) {
 	  jumping(jump);
 	}
+
+	if (!!bg) {
+      document.getElementById('whole-wrapper').style.backgroundImage = `url('\${bg}')`
+    }
 }
  
  parse(cursor);

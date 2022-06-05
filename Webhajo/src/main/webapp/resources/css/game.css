@@ -201,11 +201,10 @@ h2#game_title {
     bottom: 0;
 
     display: grid;
-    grid-template-rows: 35px 200px 35px;
+    grid-template-rows: 35px 200px;
     grid-template-areas:
             "name . . ."
-            "text text text text"
-            "setting setting setting setting";
+            "text text text text";
     text-align: justify;
 }
 
@@ -232,7 +231,7 @@ h2#game_title {
     width: 100%;
 }
 
-#setting {
+/* #setting {
     grid-area: setting;
     box-sizing: border-box;
     padding-right: .5em;
@@ -252,7 +251,7 @@ h2#game_title {
 
 #setting span + span {
     margin-left: 1em;
-}
+} */
 
 #selector-wrapper {
     width: 100%;

@@ -13,20 +13,10 @@
 	<div id="gList">
 		<ul>
 			<li id="preview">
-				<a href="">
-					<img id="gThumbnail" width="400px" src="resources/imgs/webhajo_logo.png">
-					<div>
-						<h2>게임 이름</h2>
-						<div>게임 내용</div>
-					</div>
-				</a>
-			</li>
-			<li id="preview">
-				<a href="">
-					<img id="gThumbnail" width="400px" src="resources/imgs/webhajo_logo.png">
-					<div>
-						<h2>게임 이름</h2>
-						<div>게임 내용</div>
+				<a href="game_page.jsp">
+					<img id="gThumbnail" width="400px" src="resources/game_imgs/ant_grass_thumbnail.png">
+					<div id="gDescript">
+						<h2>개미와 베짱이</h2>
 					</div>
 				</a>
 			</li>

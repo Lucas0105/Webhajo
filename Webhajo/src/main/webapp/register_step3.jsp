@@ -15,7 +15,7 @@
 	String userEmail= request.getParameter("userEmail");
 %>
 <link rel="stylesheet" href="resources/css/register.css">
-<body onload="inputHidden()">
+<body>
 	<div class="register">
 		<div class="container">
 			<img alt="garland" src="resources/imgs/garland.png" style="width:100%; margin-bottom:2%;">
@@ -84,8 +84,5 @@
 		
 	}
 	
-	function inputHidden(){
-		
-	}
 </script>
 </html>

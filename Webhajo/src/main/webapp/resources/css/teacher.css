@@ -190,3 +190,10 @@
 .attend-record td{
 	color: rgb(147, 147, 147);
 }
+
+.circle{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	margin: 0 auto;
+}

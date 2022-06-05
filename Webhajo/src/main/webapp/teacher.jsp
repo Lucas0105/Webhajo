@@ -1,9 +1,77 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
+
+<%@ page import="java.sql.*"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="javax.sql.*" %>
+<%@ page import="javax.naming.*" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Locale" %>
+
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <link rel="stylesheet" href="resources/css/teacher.css">
+	<% 
+		int aNum = Integer.parseInt((String)session.getAttribute("grade"))-1;
+		int allStd = 0;
+		int attendanceStd = 0;
+		int absentStd = 0;
+		int attendNum = 1;
+		int attendNum1 = 1;
 
+		
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		PreparedStatement pstmt1=null;
+		PreparedStatement pstmt2=null;
+		PreparedStatement pstmt3=null;
+		ResultSet rs=null;
+		ResultSet stdRs = null;
+		ResultSet stdRs1 = null;
+
+		Date now = new Date(); // java.util.Date, NOT java.sql.Date or java.sql.Timestamp!
+		String format1 = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(now);
+
+		
+		try {
+				String dbURL = "jdbc:mysql://13.209.254.90:57668/webhajo?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
+				String dbID = "root";
+				String dbPassword = "webhajo123";
+				Class.forName("com.mysql.jdbc.Driver");
+				conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+		  		pstmt=conn.prepareStatement("SELECT count(*) FROM user WHERE grade = ?");
+		  		pstmt.setInt(1, aNum+1);
+		  		rs=pstmt.executeQuery();
+				
+		  		rs.next();
+		  		
+		  		allStd = rs.getInt("count(*)");
+		  		
+		  		
+		  		pstmt1=conn.prepareStatement("SELECT count(*) FROM user WHERE grade = ? AND logindt like '"+ format1 +"%'");
+		  		pstmt1.setInt(1, aNum+1);
+		  		rs=pstmt1.executeQuery();
+		  		
+		  		rs.next();
+		  		
+				attendanceStd = rs.getInt("count(*)");
+				
+				absentStd = allStd - attendanceStd;
+				
+				
+		  		pstmt2=conn.prepareStatement("SELECT * FROM user WHERE grade = ?");
+		  		pstmt2.setInt(1, aNum+1);
+		  		stdRs=pstmt2.executeQuery();
+				
+		  		
+		  		pstmt3=conn.prepareStatement("SELECT * FROM user WHERE grade = ?");
+		  		pstmt3.setInt(1, aNum+1);
+		  		stdRs1=pstmt3.executeQuery();
+		  		 
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	%>
 <div id="teacher">
 	<div class="left-frame">
 		<p>
@@ -21,7 +89,7 @@
 			1학년
 		</a>
 		
-		<a class="select" href="#">
+		<a href="#">
 			2학년
 		</a>
 		
@@ -83,111 +151,52 @@
 						피드백
 					</th>
 					
-					<th>
+					<th style="width: 10%;">
 						출석여부
 					</th>
 
 				</tr>
-				<tr>
-					<td>
-						1
-					</td>
-					<td>
-						홍길동
-					</td>
-					<td>
-						개미와 배짱이
-					</td>
-					<td>
-						3
-					</td>
-					<td>
-						버튼
-					</td>
-					<td>
-						초록 or 빨강색
-					</td>
-				</tr>
-				<tr>
-					<td>
-						2
-					</td>
-					<td>
-						홍길동
-					</td>
-					<td>
-						개미와 배짱이
-					</td>
-					<td>
-						3
-					</td>
-					<td>
-						버튼
-					</td>
-					<td>
-						초록 or 빨강색
-					</td>
-				</tr>
-				<tr>
-					<td>
-						3
-					</td>
-					<td>
-						홍길동
-					</td>
-					<td>
-						개미와 배짱이
-					</td>
-					<td>
-						3
-					</td>
-					<td>
-						버튼
-					</td>
-					<td>
-						초록 or 빨강색
-					</td>
-				</tr>
-				<tr>
-					<td>
-						4
-					</td>
-					<td>
-						홍길동
-					</td>
-					<td>
-						개미와 배짱이
-					</td>
-					<td>
-						3
-					</td>
-					<td>
-						버튼
-					</td>
-					<td>
-						초록 or 빨강색
-					</td>
-				</tr>
-				<tr>
-					<td>
-						5
-					</td>
-					<td>
-						홍길동
-					</td>
-					<td>
-						개미와 배짱이
-					</td>
-					<td>
-						3
-					</td>
-					<td>
-						버튼
-					</td>
-					<td>
-						초록 or 빨강색
-					</td>
-				</tr>
+				<% while(stdRs.next()){ %>
+					<tr>
+						<td>
+							<%=attendNum %>
+						</td>
+						<td>
+							<%=stdRs.getString("name") %>
+						</td>
+						<td>
+							개미와 배짱이
+						</td>
+						<td>
+							3
+						</td>
+						<td>
+							버튼
+						</td>
+						
+							<%
+							if(stdRs.getString("logindt").substring(0, 10).equals(format1)){
+								%>
+							<td>
+								<div class="circle" style="background-color:green;">
+								</div>
+							</td>		
+							<% 
+							}
+							else{
+							%>
+							<td>
+								<div class="circle" style="background-color:red;">
+								</div>
+							</td>
+								
+							<%
+							}
+							%>
+
+					</tr>				
+					
+				<%++attendNum; } %>
 			</table>
 		</div>
 	</div>
@@ -197,9 +206,9 @@
 			<h3>
 				출석률
 			</h3>
-			<p><b>학생 수 30명</b></p>
-			<p>출석 인원 29명</p>
-			<p>결석 인원 1명 </p>
+			<p><b>학생 수 <%=allStd %>명</b></p>
+			<p>출석 인원 <%=attendanceStd %>명</p>
+			<p>결석 인원 <%=absentStd %>명 </p>
 			<p>오늘의 학습률 80%</p>
 			<progress id="mileageBar" class="mileageBar" value="80" min="0" max="100"></progress>
 				
@@ -212,7 +221,7 @@
 			<table>
 				<tr>
 					<th>
-						출석시간
+						최근접속시간
 					</th>
 					<th>
 						출석번호
@@ -221,67 +230,34 @@
 						학생이름
 					</th>
 				</tr>
+				
+				<%while(stdRs1.next()){ %>
 				<tr>
 					<td>
-						2022/05/26 06:12:25
+						<%=stdRs1.getString("logindt") %>
 					</td>
 					<td>
-						1
+						<%=attendNum1 %>
 					</td>
 					<td>
-						홍길동
+						<%=stdRs1.getString("name") %>
 					</td>
 				</tr>
-				<tr>
-					<td>
-						2022/05/26 06:12:25
-					</td>
-					<td>
-						2
-					</td>
-					<td>
-						홍길동
-					</td>
-				</tr>
-				<tr>
-					<td>
-						2022/05/26 06:12:25
-					</td>
-					<td>
-						3
-					</td>
-					<td>
-						홍길동
-					</td>
-				</tr>
-				<tr>
-					<td>
-						2022/05/26 06:12:25
-					</td>
-					<td>
-						4
-					</td>
-					<td>
-						홍길동
-					</td>
-				</tr>
-				<tr>
-					<td>
-						2022/05/26 06:12:25
-					</td>
-					<td>
-						5
-					</td>
-					<td>
-						홍길동
-					</td>
-				</tr>
+				
+			<% attendNum1++;}%>
+				
+				
 			</table>
 		</div>
 	</div>
 </div>
 
 <script>
+window.onload = function initTeacher(){
+	var aTag = document.getElementsByClassName("left-frame")[0].getElementsByTagName("a")[<%=aNum %>].className = 'select';
+
+}
+
 // grid: x/y axis, tooltip
 var dataset = [{x:'1', y:9 }, {x:'2', y:19}, {x:'3', y:29}, {x:'4', y:39}, 
                {x:'5', y:29}, {x:'6', y:19}, {x:'7', y:9 }, {x:'8', y:9 }, {x:'9', y:9 },

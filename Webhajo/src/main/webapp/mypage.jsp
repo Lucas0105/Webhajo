@@ -1,19 +1,59 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
+
+<%@ page import="java.sql.*"%>
+<%@ page import="javax.sql.*" %>
+<%@ page import="javax.naming.*" %>
+<%
+	String userid=null;
+	String gender=null;
+	if ((session.getAttribute("userid")==null)) {
+		out.println("<script>");
+		out.println("location.href='index.jsp'");
+		out.println("</script>");
+	}
+	
+	userid = (String)session.getAttribute("userid");
+	
+	Connection conn=null;
+	PreparedStatement pstmt=null;
+	ResultSet rs=null;
+	
+	try {
+			String dbURL = "jdbc:mysql://13.209.254.90:57668/webhajo?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
+			String dbID = "root";
+			String dbPassword = "webhajo123";
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+	  		pstmt=conn.prepareStatement("SELECT * FROM user WHERE userid=?");
+	  		pstmt.setString(1,userid);
+	  		rs=pstmt.executeQuery();
+			
+	  		rs.next();
+	  		if(rs.getString("gender").charAt(0) == 'M'){
+	  			gender = "남성";
+	  		}
+	  		else{
+	  			gender = "여성";
+	  		}
+	  		 
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+%>
 <link rel="stylesheet" href="resources/css/mypage.css">
 <div id="introduction">
 	<div class= "long-square">
 		
 		<div class="circle-profile">
-		
-			<div class="profile">
-				<h2>배고픈 라이언</h2>
-				<p>어쩌구 저쩌고</p>
-			</div>
+			<img src="resources/imgs/hoonbarnom.PNG" alt="프로필 사진" width="150px">			
 		</div>
 		
-
+		<div class="profile">
+			<h2><%=rs.getString("nickname") %></h2>
+			<p><%=rs.getString("name") %></p>
+		</div>
 	</div>
 	
 	<div class="introBody">
@@ -47,14 +87,14 @@
 						학교
 					</td>
 					<td>
-						충북초등학교
+						<%=rs.getString("school") %>
 					</td>
 					
 					<td>
-						담임 선생님
+						닉네임
 					</td>
 					<td>
-						홍길동
+						<%=rs.getString("nickname") %>
 					</td>
 				</tr>
 				
@@ -63,14 +103,14 @@
 						학년
 					</td>
 					<td>
-						4학년
+						<%=rs.getString("grade") %>학년
 					</td>
 					
 					<td>
 						성별
 					</td>
 					<td>
-						남성
+						<%=gender %>
 					</td>
 				</tr>
 				
@@ -80,32 +120,17 @@
 						이름
 					</td>
 					<td>
-						정원재
-					</td>
-					
-					<td>
-						주소
-					</td>
-					<td>
-						충청북도 청주시 서원구 충대로 1
-					</td>
-				</tr>
-				
-				<tr>
-					<td>
-						연락처		
-					</td>
-					<td>
-						01012345678
+						<%=rs.getString("name") %>
 					</td>
 					
 					<td>
 						이메일
 					</td>
 					<td>
-						dj@gmail.com
+						<%=rs.getString("email") %>
 					</td>
 				</tr>
+
 			</table>
 			
 		

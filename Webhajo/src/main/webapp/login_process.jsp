@@ -28,6 +28,7 @@
   				session.setAttribute("userid",rs.getString("userid"));
   				session.setAttribute("type",rs.getString("type"));
   				session.setAttribute("nickname",rs.getString("nickname"));
+  				session.setAttribute("grade",rs.getString("grade"));
   				
   				PreparedStatement pstmt1=conn.prepareStatement("UPDATE user SET logindt= '"+timestamp+"' WHERE id = (?)");
   				pstmt1.setString(1, id);

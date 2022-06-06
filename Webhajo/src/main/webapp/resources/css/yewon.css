@@ -32,12 +32,16 @@
 #preview:hover {
 	transform: translateY(-40px);
 }
-img #gThumbnail {
+img#gThumbnail {
 	position: relative;
 	display: block;
+	border-radius: 20px;
 }
 #gDescript {
 	padding: 20px;
+	font-size: 1.6em;
+	font-family: 'BMJUA';
+	text-decoration: none;
 }
 /*
 #banList {

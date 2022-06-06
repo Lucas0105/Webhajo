@@ -26,11 +26,10 @@
 				<ul>
 					<li id="preview" style="margin: 60px 0 0 0">
 						<span class="crown"></span>
-						<a href="">
-							<img id="gThumbnail" width="400px" src="resources/imgs/webhajo_logo.png">
+						<a href="game_page.jsp">
+							<img id="gThumbnail" width="400px" src="resources/game_imgs/ant_grass_thumbnail.png">
 							<div id="gDescript">
-								<h2>게임 이름</h2>
-								<div>게임 내용</div>
+								<h2>개미와 베짱이</h2>
 							</div>
 						</a>
 					</li>

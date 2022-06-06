@@ -20,16 +20,23 @@
 	PreparedStatement pstmt=null;
 	ResultSet rs=null;
 	
+	PreparedStatement pstmt1=null;
+	ResultSet rs1=null;
+	
 	try {
 			String dbURL = "jdbc:mysql://13.209.254.90:57668/webhajo?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 			String dbID = "root";
 			String dbPassword = "webhajo123";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
-	  		pstmt=conn.prepareStatement("SELECT * FROM user WHERE userid=?");
+	  		pstmt=conn.prepareStatement("SELECT * FROM user WHERE userid=?");		//사용자 정보 조회
 	  		pstmt.setString(1,userid);
 	  		rs=pstmt.executeQuery();
-			
+
+	  		pstmt=conn.prepareStatement("SELECT * FROM feedback WHERE stdid=?");		//피드백 정보 조회
+	  		pstmt.setString(1,userid);
+	  		rs1=pstmt.executeQuery();
+	  		
 	  		rs.next();
 	  		if(rs.getString("gender").charAt(0) == 'M'){
 	  			gender = "남성";
@@ -141,6 +148,7 @@
 		
 		<div class="feedback">
 			<table border='1'>
+			
 				<tr>
 					<th>
 						날짜
@@ -155,81 +163,24 @@
 						선생님
 					</th>
 				</tr>
+				<% while(rs1.next()) { %>
 				<tr>
 					<td>
-						2022.04.22
+						<%=rs1.getString("insertdate").substring(0, 10) %>
+						
 					</td>
 					<td>
-						게미와 배짱이
+						<%=rs1.getString("game") %>
 					</td>
 					
 					<td>
-						아쉽군
+						<%=rs1.getString("content") %>
 					</td>
 					<td>
-						홍길동
+						<%=rs1.getString("teachername") %>
 					</td>
 				</tr>
-				<tr>
-					<td>
-						2022.04.22
-					</td>
-					<td>
-						게미와 배짱이
-					</td>
-					
-					<td>
-						아쉽군
-					</td>
-					<td>
-						홍길동
-					</td>
-				</tr>
-				<tr>
-					<td>
-						2022.04.22
-					</td>
-					<td>
-						게미와 배짱이
-					</td>
-					
-					<td>
-						아쉽군
-					</td>
-					<td>
-						홍길동
-					</td>
-				</tr>
-				<tr>
-					<td>
-						2022.04.22
-					</td>
-					<td>
-						게미와 배짱이
-					</td>
-					
-					<td>
-						아쉽군
-					</td>
-					<td>
-						홍길동
-					</td>
-				</tr>
-				<tr>
-					<td>
-						2022.04.22
-					</td>
-					<td>
-						게미와 배짱이
-					</td>
-					
-					<td>
-						아쉽군
-					</td>
-					<td>
-						홍길동
-					</td>
-				</tr>
+				<%} %>
 			</table>
 		</div>
 	</div>

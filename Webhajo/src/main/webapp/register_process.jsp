@@ -14,7 +14,6 @@
 	String userId = request.getParameter("userId");
 	String userPw = request.getParameter("userPw");
 	
-	System.out.println(gender);
 	
 	Connection conn=null;
 	PreparedStatement pstmt=null;

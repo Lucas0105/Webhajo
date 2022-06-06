@@ -26,6 +26,8 @@
   			if(pass.equals(rs.getString("password"))){
   				session.setAttribute("id",id);
   				session.setAttribute("userid",rs.getString("userid"));
+  				session.setAttribute("name",rs.getString("name"));
+
   				session.setAttribute("type",rs.getString("type"));
   				session.setAttribute("nickname",rs.getString("nickname"));
   				session.setAttribute("grade",rs.getString("grade"));

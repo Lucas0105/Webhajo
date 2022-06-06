@@ -170,7 +170,7 @@
 						<td>
 							3
 						</td>
-						<td>
+						<td onclick="modalOn('<%=stdRs.getString("userid") %>', '<%=stdRs.getString("name") %>')" >
 							버튼
 						</td>
 						
@@ -250,6 +250,31 @@
 			</table>
 		</div>
 	</div>
+	
+	<div id="modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="title">
+                <h2>피드백</h2>
+            </div>
+            <div class="close-area">X</div>
+            <div class="content">
+            
+				<form id="feedbackform" name="feedbackform" action="feedback_process.jsp" method="get">
+            		<input type="hidden" name="userid" id="userid" >
+            		<label for="name">학생 이름</label>
+            		<input type="text" id="name" name="name" readonly="readonly">
+            		
+            		<label for="game">게임</label>
+            		<input type="text" id="game" name="game" readonly="readonly">
+            		
+            		
+            	</form>
+                <textarea id="comment" name="comment" form="feedbackform" placeholder="피드백을 입력해주세요..."></textarea>
+
+                <button id="feedback_btn" type="submit" form="feedbackform">확인</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -337,6 +362,39 @@ tooltip.append("text")
     .attr("dy", "1em")
     .style("text-anchor", "middle");
     
+    
+const modal = document.getElementById("modal")
+
+
+function modalOn(id, name) {
+	document.getElementById("userid").value = id;
+	document.getElementById("name").value = name; 
+	document.getElementById("game").value = "개미와 배짱이";
+	console.log(id);
+    modal.style.display = "flex"
+}
+function isModalOn() {
+    return modal.style.display === "flex"
+}
+function modalOff() {
+    modal.style.display = "none"
+}
+
+const closeBtn = modal.querySelector(".close-area")
+closeBtn.addEventListener("click", e => {
+    modalOff()
+})
+modal.addEventListener("click", e => {
+    const evTarget = e.target
+    if(evTarget.classList.contains("modal-overlay")) {
+        modalOff()
+    }
+})
+window.addEventListener("keyup", e => {
+    if(isModalOn() && e.key === "Escape") {
+        modalOff()
+    }
+})
 </script>
 <%@ include file="footer.jsp" %>
 

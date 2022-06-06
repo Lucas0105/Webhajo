@@ -39,7 +39,7 @@
 				String dbPassword = "webhajo123";
 				Class.forName("com.mysql.jdbc.Driver");
 				conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
-		  		pstmt=conn.prepareStatement("SELECT count(*) FROM user WHERE grade = ?");
+		  		pstmt=conn.prepareStatement("SELECT count(*) FROM user WHERE grade = ? AND type = 'student'");	//총 학생 수
 		  		pstmt.setInt(1, aNum+1);
 		  		rs=pstmt.executeQuery();
 				
@@ -48,7 +48,7 @@
 		  		allStd = rs.getInt("count(*)");
 		  		
 		  		
-		  		pstmt1=conn.prepareStatement("SELECT count(*) FROM user WHERE grade = ? AND logindt like '"+ format1 +"%'");
+		  		pstmt1=conn.prepareStatement("SELECT count(*) FROM user WHERE grade = ? AND logindt like '"+ format1 +"%' AND type = 'student'");	//오늘 출석한 인원
 		  		pstmt1.setInt(1, aNum+1);
 		  		rs=pstmt1.executeQuery();
 		  		
@@ -59,12 +59,12 @@
 				absentStd = allStd - attendanceStd;
 				
 				
-		  		pstmt2=conn.prepareStatement("SELECT * FROM user WHERE grade = ?");
+		  		pstmt2=conn.prepareStatement("SELECT * FROM user WHERE grade = ? AND type = 'student'");			//학생 명단
 		  		pstmt2.setInt(1, aNum+1);
 		  		stdRs=pstmt2.executeQuery();
 				
 		  		
-		  		pstmt3=conn.prepareStatement("SELECT * FROM user WHERE grade = ?");
+		  		pstmt3=conn.prepareStatement("SELECT * FROM user WHERE grade = ? AND type = 'student'");			//접속 기록
 		  		pstmt3.setInt(1, aNum+1);
 		  		stdRs1=pstmt3.executeQuery();
 		  		 

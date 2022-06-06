@@ -239,7 +239,7 @@ const scenario = {
 					"jump": "4-a"
 				}, {
 					"text": "네가 뭔 상관이야! 신경 꺼!",
-					"jump": "badEnd"
+					"jump": "4-b"
 				}, {
 					"text": "그럼~ 네 말 듣고 바로 일 하러 가서, 챙겨놨어!",
 					"jump": "happyEnd"
@@ -269,6 +269,20 @@ const scenario = {
 					"jump": "happyEnd"
 				}
 				]
+			}
+		],
+		"4-b": [
+			{
+				"text": "temp",
+			},
+			{
+				"name": "개미",
+				"char1": './resources/game_imgs/grasshopper_default.png',
+				"char2": './resources/game_imgs/ant_talking.png',
+				"text": "그래? 그럼 난 가볼게."
+			},
+			{
+				"jump": "badEnd"
 			}
 		],
 		"badEnd": [

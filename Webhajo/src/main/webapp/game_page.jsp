@@ -42,7 +42,7 @@ const scenario = {
 		"start": [
 		{
 			"bg": "./resources/game_imgs/start.png",
-			"text": "클릭하여 게임을 시작합니다."
+			"text": "한 번 더 클릭하여 시작합니다."
 		},
 		{
 			"bg": "./resources/game_imgs/background_spring.png",
@@ -53,44 +53,266 @@ const scenario = {
 			"text": "베짱이는 노는 것을 매우 좋아하는 친구랍니다.\n베짱이는 오늘도 아무 일도 하지 않았어요."
 		},
 		{
-			"name": "김애저",
-			"text": "두번쨰 샘플 텍스트입니다.",
-		},
-		{
-			"text": "이름이 없는 경우에는 이름 창이 사라졌으면 좋겠어요."
-		},
-		{
-			"name": "rladowj",
-			"text": "왈왈",
 			"char1": './resources/game_imgs/grasshopper_default.png',
-			"bg": "./resources/game_imgs/background_winter.png"
+			"char2": './resources/game_imgs/ant_default.png',
+			"text": "지나가다 그 모습을 본 개미는"
 		},
 		{
+			"char1": './resources/game_imgs/grasshopper_default.png',
+			"char2": './resources/game_imgs/ant_default.png',
+			"text": "베짱이에게 말을 걸어보았습니다."
+		},
+		{
+			"char1": './resources/game_imgs/grasshopper_default.png',
+			"char2": './resources/game_imgs/ant_talking.png',
+			"name": "개미",
+			"text": "안녕! 나는 개미라고 해~"
+		},
+		{
+			"char1": './resources/game_imgs/grasshopper_default.png',
+			"char2": './resources/game_imgs/ant_talking.png',
+			"name": "개미",
+			"text": "넌 이름이 뭐니?"
+		},
+		{
+			"char1": './resources/game_imgs/grasshopper_talking.png',
+			"char2": './resources/game_imgs/ant_default.png',
+			"name": "베짱이",
+			"text": "나는.."
+		},
+		{
+			"char1": './resources/game_imgs/grasshopper_talking.png',
+			"char2": './resources/game_imgs/ant_default.png',
 			"select": [
 			{
-				"text": "선택지 1번",
-				"jump": "select1"
+				"char1": './resources/game_imgs/grasshopper_talking.png',
+				"char2": './resources/game_imgs/ant_default.png',
+				"text": "네가 알아서 뭐하게?",
 			}, {
-				"text": "선택지 2번",
+				"char1": './resources/game_imgs/grasshopper_talking.png',
+				"char2": './resources/game_imgs/ant_default.png',
+				"text": "베짱이라고 해~ 넌 뭘 하고 있는 거니?",
 			}
 			]
 		},
 		{
-			"name": "김애저",
-			"text": "선택완료",
-			"char2": './resources/game_imgs/ant_default.png'
+			"char1": './resources/game_imgs/grasshopper_talking.png',
+			"char2": './resources/game_imgs/ant_default.png',
+			"name": "베짱이",
+			"text": "근데 넌 뭘 그렇게 열심히 하니?"
+		},
+		{
+			"char1": './resources/game_imgs/grasshopper_default.png',
+			"char2": './resources/game_imgs/ant_talking.png',
+			"name": "개미",
+			"text": "나는 겨울을 날 식량을 모으고 있어!"
+		},
+		{
+			"char1": './resources/game_imgs/grasshopper_default.png',
+			"char2": './resources/game_imgs/ant_talking.png',
+			"name": "개미",
+			"text": "지금 열심히 모아놔야 겨울을 굶지 않고 보낼 수 있어!"
+		},
+		{
+			"char1": './resources/game_imgs/grasshopper_talking.png',
+			"char2": './resources/game_imgs/ant_default.png',
+			"select": [
+			{
+				"text": "너 참 성실하구나!",
+				"jump": "2-a"
+			}, {
+				"text": "그때부터 일 시작하면 안돼?",
+				"jump": "2-b"
+			}
+			]
 		}
 		],
-		"select1": [
-		{
-			"text": "temp",
-		},
-		{
-			"text": "선택지 1번을 클릭 했습니다.",
-		},
-		{
-			"jump": "start"
-		},
+		"2-a": [
+			{
+				"text": "temp",
+			},
+			{
+				"name": "개미",
+				"char1": './resources/game_imgs/grasshopper_default.png',
+				"char2": './resources/game_imgs/ant_talking.png',
+				"text": "하핫 고마워!"
+			},
+			{
+				"jump": "scene3"
+			},
+		],
+		"2-b": [
+			{
+				"text": "temp",
+			},
+			{
+				"name": "개미",
+				"char1": './resources/game_imgs/grasshopper_default.png',
+				"char2": './resources/game_imgs/ant_talking.png',
+				"text": "겨울은 추워서 식량을 구하기 어렵단 말이야!"
+			},
+			{
+				"name": "개미",
+				"char1": './resources/game_imgs/grasshopper_default.png',
+				"char2": './resources/game_imgs/ant_talking.png',
+				"text": "지금 식량을 모아두지 않으면 굶어 죽게 돼!"
+			},
+			{
+				"jump": "scene3"
+			},
+		],
+		"scene3": [
+			{
+				"name": "개미",
+				"char1": './resources/game_imgs/grasshopper_default.png',
+				"char2": './resources/game_imgs/ant_talking.png',
+				"text": "너도 같이 일 하지 않을래?"
+			},
+			{
+				"char1": './resources/game_imgs/grasshopper_talking.png',
+				"char2": './resources/game_imgs/ant_default.png',
+				"name": "베짱이",
+				"text": "나는.."
+			},
+			{
+				"char1": './resources/game_imgs/grasshopper_talking.png',
+				"char2": './resources/game_imgs/ant_default.png',
+				"select": [
+				{
+					"text": "싫어. 혼자 해. 나는 노래가 좋아.",
+					"jump": "3-a"
+				}, {
+					"text": "권유는 고맙지만, 지금은 딱히 일을 하고 싶지 않아.",
+					"jump": "3-b"
+				}, {
+					"text": "좋아!",
+					"jump": "happyEnd"
+				}
+				]
+			}
+		],
+		"3-a": [
+			{
+				"text": "temp"
+			},
+			{
+				"name": "개미",
+				"char1": './resources/game_imgs/grasshopper_default.png',
+				"char2": './resources/game_imgs/ant_talking.png',
+				"text": "그래, 그럼 난 먼저 가볼게."
+			},
+			{
+				"jump": "badEnd"
+			}
+		],
+		"3-b": [
+			{
+				"text": "temp"
+			},
+			{
+				"name": "개미",
+				"char1": './resources/game_imgs/grasshopper_default.png',
+				"char2": './resources/game_imgs/ant_talking.png',
+				"text": "그래? 그럼 나중에라도 일 할 생각이 들면, 같이 일 하자!"
+			},
+			{
+				"jump": "scene4"
+			}
+		],
+		"scene4": [
+			{
+				"bg": "./resources/game_imgs/background_winter.png",
+				"text": "몇 달 뒤 . ."
+			},
+			{
+				"name": "개미",
+				"char1": './resources/game_imgs/grasshopper_default.png',
+				"char2": './resources/game_imgs/ant_talking.png',
+				"text": "베짱아! 왜 일 하러 오지 않았니? 식량은 잘 챙겨놨어?"
+			},
+			{
+				"char1": './resources/game_imgs/grasshopper_talking.png',
+				"char2": './resources/game_imgs/ant_default.png',
+				"select": [
+				{
+					"text": "미안해.. 바로 네 말 들을걸, 깜빡해 버렸어..\n혹시 식량을 나눠줄 수 있겠니?",
+					"jump": "4-a"
+				}, {
+					"text": "네가 뭔 상관이야! 신경 꺼!",
+					"jump": "badEnd"
+				}, {
+					"text": "그럼~ 네 말 듣고 바로 일 하러 가서, 챙겨놨어!",
+					"jump": "happyEnd"
+				}
+				]
+			}
+		],
+		"4-a": [
+			{
+				"text": "temp",
+			},
+			{
+				"name": "개미",
+				"char1": './resources/game_imgs/grasshopper_default.png',
+				"char2": './resources/game_imgs/ant_talking.png',
+				"text": "이번 한 번 만이야? 다음엔 꼭 같이 일 하자~"
+			},
+			{
+				"char1": './resources/game_imgs/grasshopper_talking.png',
+				"char2": './resources/game_imgs/ant_default.png',
+				"select": [
+				{
+					"text": "알았어! (일? 내가 왜 하냐? 나중에 또 개미한테 부탁해야지~)",
+					"jump": "badEnd"
+				}, {
+					"text": "알았어! (이거 먹고, 개미를 도와 일 해야겠다.)",
+					"jump": "happyEnd"
+				}
+				]
+			}
+		],
+		"badEnd": [
+			{
+				"bg": "./resources/game_imgs/bad_end.png"
+			},
+			{
+				"text": "일을 하지 않아 식량을 모아둘 수 없었던 베짱이는"
+			},
+			{
+				"text": "이번 겨울을 무사히 보낼 수 없었습니다."
+			},
+			{
+				"text": "Bad End . .",
+			},
+			{
+				"text": "한 번 더 클릭하여 시작으로 돌아가기",
+			},
+			{
+				"jump": "start"
+			}
+		],
+		"happyEnd": [
+			{
+				"text": "temp"
+			},
+			{
+				"bg": "./resources/game_imgs/happy_end.png"
+			},
+			{
+				"text": "개미와 베짱이는 아껴둔 식량으로"
+			},
+			{
+				"text": "행복하게 겨울을 날 수 있었습니다."
+			},
+			{
+				"text": "Happy End",
+			},
+			{
+				"text": "한 번 더 클릭하여 시작으로 돌아가기",
+			},
+			{
+				"jump": "start"
+			}
 		]
 	  }
 
@@ -138,10 +360,10 @@ const parse = (i = 0) => {
 
 	//캐릭터 이미지 유무에 따른 출력
 	if (!!char1) {
-	  document.getElementById('character1-wrapper').innerHTML = `<img src="\${char1}"/>`
+		document.getElementById('character1-wrapper').innerHTML = `<img src="\${char1}"/>`
 	}
 	if (!!char2) {
-	  document.getElementById('character2-wrapper').innerHTML = `<img src="\${char2}"/>`
+		document.getElementById('character2-wrapper').innerHTML = `<img src="\${char2}"/>`
 	}
 	
 	//선택지가 있으면 선택지 출력

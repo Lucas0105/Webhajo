@@ -39,7 +39,11 @@
 			<textarea id="game_descript" name="how_to_play" disabled onkeydown="resize(this)" onkeyup="resize(this)">3. 끝까지 진행하여 여러분의 선택으로 만들어진 엔딩을 확인해보세요!</textarea>
 		</div>
 	</div>
-
+	<div>
+	<audio controls autoplay>
+		<source src="resources/game_imgs/bgm.mp3" type="audio/mp3">
+	</audio>
+	</div>
 </div>
 
 <!-- 게임 스크립트 -->
@@ -410,7 +414,7 @@ const parse = (i = 0) => {
 </script>
 	
 
-<script>
+<script>	
 	function resize(obj) {
 		obj.style.height = '1px';
 		obj.style.height = (12 + obj.scrollHeight) + 'px';

@@ -25,7 +25,7 @@
 			
 				<div id = menue>
 					<a href = "intro.jsp">소개</a>
-					<a href = "">공지사항</a>
+					<a href = "board.jsp">공지사항</a>
 					<a href = "study_space.jsp">학습공간</a>
 					<a href = "" onclick="mypage()">마이페이지 </a>	
 				</div>
@@ -58,7 +58,6 @@
 			function logout(){
 				console.log("test");
 			}
-			
 			function mypage(){
 				event.preventDefault();
 				<%

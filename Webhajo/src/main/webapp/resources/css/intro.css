@@ -18,36 +18,48 @@
 	
 	.title{
 		display: flex;
+		margin-bottom: 20px;
 	}
 	
 	.people{
 		display: flex;
 		flex-direction: column;
+		width : 600px;
+		margin-right: 20px;
+		border: 1px solid black;
+		padding: 10px;
 	}
 	.name {
 		display: flex;
-		
+		justify-content: center;
+		padding-bottom: 10px;
 	}
 	
 	.desc {
 		display: flex;
+		justify-content: center;
 	}
 	
 	.funcZip {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;		
-		
+		margin-top: 50px;
 	}
+	
 	.box{
 		display: flex;
 		flex-direction: column;
+    	width: 300px;
+    	padding: 10px 10px 10px 10px;
+    	margin-right: 10px;
 	}
 	
 	.title{
 		font-weight: bold;
 		display: flex;
 		justify-content: center;
+		margin-bottom: 10px;
 	}
 	
 	

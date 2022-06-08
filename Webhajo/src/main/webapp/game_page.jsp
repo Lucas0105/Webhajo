@@ -28,7 +28,13 @@
 					</div>
 				</div>
 			</div>
-		<textarea id="game_descript" name="game_descript" disabled onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+		<h2 id="game_title">게임 내용</h2>
+		<textarea class="game_descript" id="game_descript" name="game_descript" disabled onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+		
+		<h2 id="game_title">플레이 방법</h2>
+		<textarea id="game_descript" name="how_to_play" disabled onkeydown="resize(this)" onkeyup="resize(this)">1. 게임 화면의 어느곳이든 클릭하여 다음 장면으로 넘어갈 수 있습니다.</textarea>
+		<textarea id="game_descript" name="how_to_play" disabled onkeydown="resize(this)" onkeyup="resize(this)">2. 선택지가 나타나면 선택을 해보세요!</textarea>
+		<textarea id="game_descript" name="how_to_play" disabled onkeydown="resize(this)" onkeyup="resize(this)">3. 끝까지 진행하여 여러분의 선택으로 만들어진 엔딩을 확인해보세요!</textarea>
 	</div>
 
 </div>
@@ -407,7 +413,7 @@ const parse = (i = 0) => {
 		obj.style.height = (12 + obj.scrollHeight) + 'px';
 	}
 	
-	var txt = document.getElementById("game_descript");
-	txt.value = "  무더운 여름, 개미는 땀을 뻘벌 흘리며 일을 하고 있어요. 베짱이는 나무 그늘에서 노래를 부르며 놀고 있었죠. 개미는 베짱이에게 어떤 말을 해줄 수 있을까요? 베짱이는 개미를 어떻게 대해야 할까요? 이야기 속으로 빠져봅시다.";
+	var gdescript = document.getElementById("game_descript");
+	gdescript.value = "  무더운 여름, 개미는 땀을 뻘벌 흘리며 일을 하고 있어요. 베짱이는 나무 그늘에서 노래를 부르며 놀고 있었죠. 개미는 베짱이에게 어떤 말을 해줄 수 있을까요? 베짱이는 개미를 어떻게 대해야 할까요? 이야기 속으로 빠져봅시다.";
 </script>
 <%@ include file="footer.jsp" %>

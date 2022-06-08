@@ -28,13 +28,16 @@
 					</div>
 				</div>
 			</div>
-		<h2 id="game_title">게임 내용</h2>
-		<textarea class="game_descript" id="game_descript" name="game_descript" disabled onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
-		
-		<h2 id="game_title">플레이 방법</h2>
-		<textarea id="game_descript" name="how_to_play" disabled onkeydown="resize(this)" onkeyup="resize(this)">1. 게임 화면의 어느곳이든 클릭하여 다음 장면으로 넘어갈 수 있습니다.</textarea>
-		<textarea id="game_descript" name="how_to_play" disabled onkeydown="resize(this)" onkeyup="resize(this)">2. 선택지가 나타나면 선택을 해보세요!</textarea>
-		<textarea id="game_descript" name="how_to_play" disabled onkeydown="resize(this)" onkeyup="resize(this)">3. 끝까지 진행하여 여러분의 선택으로 만들어진 엔딩을 확인해보세요!</textarea>
+		<div class="border-yellow">
+			<h2 id="game_title">게임 내용</h2>
+			<textarea class="game_descript" id="game_descript" name="game_descript" disabled onkeydown="resize(this)" onkeyup="resize(this)"></textarea>		
+		</div>
+		<div class="border-yellow">
+			<h2 id="game_title">플레이 방법</h2>
+			<textarea id="game_descript" name="how_to_play" disabled onkeydown="resize(this)" onkeyup="resize(this)">1. 게임 화면의 어느곳이든 클릭하여 다음 장면으로 넘어갈 수 있습니다.</textarea>
+			<textarea id="game_descript" name="how_to_play" disabled onkeydown="resize(this)" onkeyup="resize(this)">2. 선택지가 나타나면 선택을 해보세요!</textarea>
+			<textarea id="game_descript" name="how_to_play" disabled onkeydown="resize(this)" onkeyup="resize(this)">3. 끝까지 진행하여 여러분의 선택으로 만들어진 엔딩을 확인해보세요!</textarea>
+		</div>
 	</div>
 
 </div>

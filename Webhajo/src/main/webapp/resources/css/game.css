@@ -168,6 +168,11 @@ h2#game_title {
 .game-body {
     padding: 0 100px;
 }
+.border-yellow {
+	border: 5px solid #f5d882;
+	margin: 20px;
+	padding: 20px;
+}
 
 /* 게임 */
 #whole-wrapper {

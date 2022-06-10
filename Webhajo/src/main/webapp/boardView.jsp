@@ -53,8 +53,8 @@
             </tr>
             </tbody>
         </table>
-        <button class="btn btn-secondary pull-right" onclick="cancel()" style="margin-bottom:10px;">돌아가기</button>
-		<a href="update.jsp?boardID=<%= boardID %>" class="btn btn-primary">수정</a>
+        <a href="update.jsp?boardID=<%= boardID %>" class="btn btn-primary" style="margin-bottom: 10px;">수정</a>
+        <button class="btn btn-secondary pull-right" onclick="cancel()" style="margin-bottom: 30px;">돌아가기</button>
         
         <script type="text/javascript">
 				function cancel(){

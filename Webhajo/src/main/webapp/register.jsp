@@ -58,7 +58,7 @@
 			</div>
 			
 			<div style="display:flex; justify-content: center;">
-				<button class="buttonZip">취소</button>
+				<button class="buttonZip" onclick="location.href='index.jsp'">취소</button>
 				<button class="buttonZip" onclick="register_btn()">다음</button>
 			</div>
 		</div>

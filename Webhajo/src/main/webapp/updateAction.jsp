@@ -13,8 +13,8 @@
 <body>
 	<%
 		String userID = null;
-		if(session.getAttribute("userID") != null){
-			userID = (String)session.getAttribute("userID");
+		if(session.getAttribute("id") != null){
+			userID = (String)session.getAttribute("id");
 		}
 
 		if(userID == null){
@@ -66,8 +66,9 @@
 					System.out.println(result);
 					script.println("<script>");
 					script.println("alert('글 수정하기 성공')");
-					script.println("location.href='index.jsp'");
+					String location = "./boardView.jsp?boardID="+ boardID;
 					script.println("</script>");
+					response.sendRedirect(location);
 				}
 			}
 		}

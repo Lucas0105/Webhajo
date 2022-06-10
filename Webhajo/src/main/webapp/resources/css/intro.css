@@ -13,38 +13,25 @@
 	.contents {
 		display: flex;
 		justify-content: space-between;
-		
 	}
 	
 	.title{
-		display: flex;
+		font-family: 'Hanna';
+	 	display: flex;
+		justify-content: center;
+		padding-top: 30px;
+		font-size: 1.5em;
 		margin-bottom: 20px;
 	}
 	
 	.people{
-		display: flex;
-		flex-direction: column;
-		width : 600px;
-		margin-right: 20px;
-		border: 1px solid black;
-		padding: 10px;
-	}
-	.name {
-		display: flex;
-		justify-content: center;
-		padding-bottom: 10px;
-	}
-	
-	.desc {
-		display: flex;
-		justify-content: center;
+    	background: #F6F9FF;
 	}
 	
 	.funcZip {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;		
-		margin-top: 50px;
 	}
 	
 	.box{
@@ -55,7 +42,7 @@
     	margin-right: 10px;
 	}
 	
-	.title{
+	.func{
 		font-weight: bold;
 		display: flex;
 		justify-content: center;
@@ -79,3 +66,58 @@
 		background-color: #8FDCFF;
 	}
 	
+main.cards {
+    display: flex;
+    padding: 32px;
+}
+
+main.cards section.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-height: 468px;
+    margin-left: 32px;
+}
+
+main.cards section.card:first-child {
+    margin-left: 0;
+}
+
+main.cards section.card h3 {
+    font-size: 100%;
+    margin: 16px 0;
+}
+
+main.cards section.card span {
+    font-weight: 300;
+    max-width: 240px;
+    font-size: 80%;
+    margin-bottom: 16px;
+}
+
+main.cards section.card.p1 {
+    box-shadow: 20px 20px 50px -30px #DBC4FF;
+}
+main.cards section.card.p2 {
+    box-shadow: 20px 20px 50px -30px #AFD6FF;
+}
+main.cards section.card.p3 {
+    box-shadow: 20px 20px 50px -30px #FFC1D5;
+}
+
+
+@font-face {
+  font-family: 'Hanna';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.eot);
+  src: url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.ttf) format('truetype');
+}
+

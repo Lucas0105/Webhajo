@@ -3,16 +3,15 @@
 <%@ page import="board.Board" %>
 <%@ page import="board.BoardDAO" %>
 <%@ page import="java.util.ArrayList" %>
-
 <%@ include file="header.jsp" %>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="resources/css/board.css">
 <div>
 
 <div class="container">
-      <div class="board">  
+      <div class="board">
 		<div class="row">
-		<img alt="garland" src="resources/imgs/garland.png" style="margin-bottom: 10px">
+		<img alt="garland" src="resources/imgs/garland.png" style="margin-bottom: 30px">
 			<table class="table table-hover" style="text-align: center; border: 1px solid #dddddd; ">
 				<thead class="table-light">
 					<tr>

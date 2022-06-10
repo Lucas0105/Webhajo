@@ -22,8 +22,8 @@
 						<div style="margin-left: 25px;"><input type="checkbox"/>자동 로그인</div>
 				</div>
 				
-				<div style="display:flex; justify-content: center;">
-					<button class="buttonZip" onclick="location.href=''">취소</button>
+				<div style="display:flex; justify-content: center; margin-top: 20px;">
+					<button class="buttonZip" onclick="location.href='index.jsp'">취소</button>
 			 		<button type="submit" class="buttonZip">완료</button>
 				</div>	 	
 			</form>	

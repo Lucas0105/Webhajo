@@ -17,10 +17,10 @@ a {
 	z-index: 1;
 }
 .body-margin {
-	margin: 0px 100px 0px 100px;
+	margin: 0px 50px 0px 50px;
 }
 .body-padding {
-	padding: 100px 0px;
+	padding: 50px 0px;
 }
 #preview {
 	background-color: #fff;
